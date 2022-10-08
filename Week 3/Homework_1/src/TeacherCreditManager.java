@@ -1,13 +1,6 @@
-import jdk.jshell.spi.ExecutionControl;
-
-public class TeacherCreditManager implements CreditService {
+public class TeacherCreditManager extends BaseCreditManager implements CreditService {
     @Override
     public void calculate() {
         System.out.println("Öğretmen kredisi hesaplandı.");
-    }
-
-    @Override
-    public void save() throws ExecutionControl.NotImplementedException {
-        throw new ExecutionControl.NotImplementedException("");
     }
 }
