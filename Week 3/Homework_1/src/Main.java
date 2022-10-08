@@ -9,7 +9,7 @@ public class Main {
         customer.setId(1);
         customer.setCity("Silicon Valley");
 
-        CustomerManager customerManager = new CustomerManager(customer);
+        CustomerManager customerManager = new CustomerManager(customer, new TeacherCreditManager());
         customerManager.save();
         customerManager.delete();
 
