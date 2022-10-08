@@ -18,7 +18,7 @@ public class Main {
         company.setCompanyName("Arçelik");
         company.setId(100);
 
-        CustomerManager customerManager1 = new CustomerManager(new Person());
+        CustomerManager customerManager1 = new CustomerManager(new Person(), new TeacherCreditManager());
 
         Person person = new Person();
         person.setFirstName("Intelli");
@@ -27,5 +27,10 @@ public class Main {
         Customer c1 = new Customer();
         Customer c2 = new Person();
         Customer c3 = new Company();
+
+
+        CustomerManager customerManager2 = new CustomerManager(new Customer(), new MilitaryCreditManager());
+        customerManager2.giveCredit();
+
     }
 }
