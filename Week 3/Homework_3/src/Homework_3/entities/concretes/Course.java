@@ -2,14 +2,16 @@ package Homework_3.entities.concretes;
 
 import Homework_3.entities.abstracts.Entities;
 
+import java.util.ArrayList;
+
 public class Course implements Entities {
     private int id;
     private String name;
     private String publisher;
-    private Instructor[] instructors;
+    private ArrayList<InstructorUser> instructors;
     private double price;
 
-    public Course(int id, String name, String publisher, Instructor[] instructors, double price) {
+    public Course(int id, String name, String publisher, ArrayList<InstructorUser> instructors, double price) {
         this.id = id;
         this.name = name;
         this.publisher = publisher;
@@ -41,11 +43,11 @@ public class Course implements Entities {
         this.publisher = publisher;
     }
 
-    public Instructor[] getInstructors() {
+    public ArrayList<InstructorUser> getInstructors() {
         return instructors;
     }
 
-    public void setInstructors(Instructor[] instructors) {
+    public void setInstructors(ArrayList<InstructorUser> instructors) {
         this.instructors = instructors;
     }
 
