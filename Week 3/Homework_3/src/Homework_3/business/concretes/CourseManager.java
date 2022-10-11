@@ -27,6 +27,7 @@ public class CourseManager implements CourseService {
     @Override
     public void delete(Course course) {
         courses.remove(course);
+        System.out.println(course.getName() + " isimli kurs kurslar listesinden çıkartıldı.");
     }
 
     @Override
