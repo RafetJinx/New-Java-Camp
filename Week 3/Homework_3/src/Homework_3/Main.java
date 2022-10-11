@@ -1,7 +1,10 @@
 package Homework_3;
 
+import Homework_3.adapters.concretes.CategoryServiceAdapter;
 import Homework_3.adapters.concretes.CourseServiceAdapter;
+import Homework_3.business.concretes.CategoryManager;
 import Homework_3.business.concretes.CourseManager;
+import Homework_3.entities.concretes.Category;
 import Homework_3.entities.concretes.Course;
 import Homework_3.entities.concretes.InstructorUser;
 
@@ -48,5 +51,20 @@ public class Main {
         CourseManager courseManager = new CourseManager(new CourseServiceAdapter(courses), courses);
         courseManager.add(course2);
         courseManager.add(course3);
+
+        System.out.println("--------------");
+        Category category1 = new Category(1,"Kategori 1");
+        Category category2= new Category(2,"Kategori 2");
+        Category category3 = new Category(3,"Kategori 2");
+
+        ArrayList<Category> categories = new ArrayList<>();
+        categories.add(category1);
+
+        CategoryManager categoryManager = new CategoryManager(new CategoryServiceAdapter(categories),categories);
+        categoryManager.add(category2);
+        categoryManager.add(category3);
+
+
+
     }
 }
