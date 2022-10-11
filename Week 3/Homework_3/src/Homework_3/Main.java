@@ -51,6 +51,9 @@ public class Main {
         CourseManager courseManager = new CourseManager(new CourseServiceAdapter(courses), courses);
         courseManager.add(course2);
         courseManager.add(course3);
+        System.out.println("---------------");
+        Course course4 = new Course(4,"Kurs 2","Rafet Ersoy",instructorUsers2,-5.90);
+        courseManager.add(course4);
 
         System.out.println("--------------");
         Category category1 = new Category(1,"Kategori 1");
