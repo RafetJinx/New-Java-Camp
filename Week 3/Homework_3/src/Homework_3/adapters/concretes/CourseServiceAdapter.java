@@ -21,4 +21,12 @@ public class CourseServiceAdapter implements CourseCheckService {
         }
         return false;
     }
+
+    @Override
+    public boolean checkIfCoursePriceUnderZero(Course course) {
+        if(course.getPrice() < 0){
+            return true;
+        }
+        return false;
+    }
 }

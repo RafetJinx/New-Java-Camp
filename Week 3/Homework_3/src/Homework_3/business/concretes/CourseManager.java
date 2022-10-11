@@ -17,11 +17,14 @@ public class CourseManager implements CourseService {
 
     @Override
     public void add(Course course) {
-        if(!courseCheckService.checkIfCourseRegistered(course)){
+        if(!courseCheckService.checkIfCourseRegistered(course) && !courseCheckService.checkIfCoursePriceUnderZero(course)){
             courses.add(course);
             return;
         }
-        System.out.println(course.getName() + " adına sahip kurs sistemde var olduğu için kurs sisteme eklenemedi.");
+        if(courseCheckService.checkIfCourseRegistered(course))
+            System.out.println(course.getName() + " adına sahip kurs sistemde var olduğu için kurs sisteme eklenemedi.");
+        if(courseCheckService.checkIfCoursePriceUnderZero(course))
+            System.out.println("Kursun bedeli 0'dan küçük olduğu için sisteme eklenemedi. (Kursun bedeli : " + course.getPrice() + ")");
     }
 
     @Override

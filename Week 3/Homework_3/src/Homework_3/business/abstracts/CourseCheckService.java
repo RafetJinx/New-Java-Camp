@@ -4,4 +4,6 @@ import Homework_3.entities.concretes.Course;
 
 public interface CourseCheckService {
     boolean checkIfCourseRegistered(Course course);
+
+    boolean checkIfCoursePriceUnderZero(Course course);
 }
